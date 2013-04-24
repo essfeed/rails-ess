@@ -15,6 +15,9 @@ You can help the web community by creating the ESS Ruby-on-Rails library.
 
 
 
+
+
+
 # Diference between RSS and ESS for events publication
 [![Publishing events with RSS](http://essfeed.org/images/6/64/Before_ess_with_rss.gif)](http://essfeed.org/)
 [![Publishing events with ESS](http://essfeed.org/images/3/3b/After_with_ess.gif)](http://essfeed.org/)
