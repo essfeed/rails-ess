@@ -22,11 +22,30 @@ You can help the web community by creating the ESS Ruby-on-Rails library.
 [![Publishing events with RSS](http://essfeed.org/images/6/64/Before_ess_with_rss.gif)](http://essfeed.org/)
 [![Publishing events with ESS](http://essfeed.org/images/3/3b/After_with_ess.gif)](http://essfeed.org/)
 
+## Installation
+
+Add this line to your application's Gemfile:
+
+    gem 'rails-ess'
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install rails-ess
 
 # Contributing
 
 Contributions to the project are welcome. Feel free to fork and improve. I accept pull requests and issues,
 especially when tests are included.
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
 
 # License
 
