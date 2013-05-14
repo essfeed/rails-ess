@@ -1,7 +1,5 @@
+require "action_dispatch"
 require "rails-ess/version"
 
-module ESS
-  module Rails
-    # Your code goes here...
-  end
-end
+Mime::Type.register "application/ess+xml", :ess
+
