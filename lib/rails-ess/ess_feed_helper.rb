@@ -1,4 +1,5 @@
 require 'action_view'
+require 'ess'
 
 module ActionView
   module Helpers
@@ -9,6 +10,9 @@ module ActionView
         ess.to_xml! xml
       end
     end
+
+    autoload :ESSFeedHelper
+    include ESSFeedHelper
   end
 end
 
