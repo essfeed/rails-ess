@@ -7,7 +7,11 @@ module ActionView
       def ess_feed(options = {}, &block)
         xml = eval("xml", block.binding)
         ess = ESS::Maker.make(options, &block)
-        xml << ess.to_xml!
+        output = ess.to_xml!
+        if options[:aggregators] || options[:push]
+          ESS::Pusher.push_to_aggregators(options.merge(:data => output))
+        end
+        xml << output
       end
     end
 
