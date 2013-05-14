@@ -7,7 +7,7 @@ module ActionView
       def ess_feed(options = {}, &block)
         xml = eval("xml", block.binding)
         ess = ESS::Maker.make(options, &block)
-        ess.to_xml! xml
+        xml << ess.to_xml!
       end
     end
 
