@@ -56,28 +56,28 @@ templates:
 
 ```ruby
 
-ess_feed(:push => true, :validate => false) do |ess|
+ess_feed(:push => true, :request => request) do |ess|
   ess.channel do |channel|
     channel.title "National Stadium Football events"
     channel.link "http://sample.com/feeds/sample.ess"
 
     ...
 
-    channel.add_feed do |feed|
-      feed.title "Football match of saturday"
-      feed.uri "http://sample.com/events/specific-and-unique-event-page/"
-      feed.description("Welcome to my first football match event. " +
-                       "This football match is very important. " +
-                       "Our team is about to go up against our main league competitor.")
+    @events.each do |event|
+      channel.add_feed do |feed|
+        feed.title        event.title
+        feed.uri          event.link
+        feed.description  event.description
 
-      feed.tags do |tags|
-        tags.tag "Sport"
-        tags.tag "Team Sport"
-        tags.tag "Stadium"
+        feed.tags do |tags|
+          tags.tag "Sport"
+          tags.tag "Team Sport"
+          tags.tag "Stadium"
+        end
+
+        ...
+
       end
-
-      ...
-
     end
   end
 end
