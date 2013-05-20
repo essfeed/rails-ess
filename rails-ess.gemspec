@@ -6,7 +6,7 @@ require 'rails-ess/version'
 Gem::Specification.new do |gem|
   gem.name          = "rails-ess"
   gem.version       = ESS::Rails::VERSION
-  gem.authors       = ["Marjan Povolni"]
+  gem.authors       = ["Marjan Povolni","Brice Pissard"]
   gem.email         = ["marian.povolny@gmail.com"]
   gem.description   = %q{This gem extends Rails with the support for ESS feed generation using Builder like sintax.}
   gem.summary       = %q{Rails extensions for ESS XML Feeds}
