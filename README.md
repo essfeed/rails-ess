@@ -7,26 +7,11 @@ rails-ess
 
 Generate ESS XML feed with Ruby-on-Rails
 
-This library is not created yet, it's also up to you to improve the web !
-You can help the web community by creating the ESS Ruby-on-Rails library.
-
-
-
-
-
-
-
-
-
-# Diference between RSS and ESS for events publication
-[![Publishing events with RSS](http://essfeed.org/images/6/64/Before_ess_with_rss.gif)](http://essfeed.org/)
-[![Publishing events with ESS](http://essfeed.org/images/3/3b/After_with_ess.gif)](http://essfeed.org/)
-
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'rails-ess'
+    gem 'rails-ess', '~> 0.9.0'
 
 And then execute:
 
@@ -36,7 +21,75 @@ Or install it yourself as:
 
     $ gem install rails-ess
 
-# Contributing
+## Usage
+
+This little extends Rails so that it becomes easy to create ESS feeds
+in your web application.
+
+It adds the "application/ess+xml" MIME type, which allows you to add
+links in the head part of a webpage like this:
+
+```ruby
+
+  auto_discovery_link_tag(:ess, {:controller => "events", :action => "feed"})
+
+```
+
+And also in a controller to respond with an ESS document:
+
+```ruby
+
+  def feed
+      @events = Event.all(:limit => 20) 
+
+      respond_to do |format|
+        format.html
+        format.ess { render :layout => false } #feed.ess.builder
+      end
+  end
+
+```
+
+This gem also adds a helper method which can be used in builder
+templates:
+
+```ruby
+
+ess_feed(:push => true, :validate =>) false do |ess|
+  ess.channel do |channel|
+    channel.title "National Stadium Football events"
+    channel.link "http://sample.com/feeds/sample.ess"
+
+    ...
+
+    channel.add_feed do |feed|
+      feed.title "Football match of saturday"
+      feed.uri "http://sample.com/events/specific-and-unique-event-page/"
+      feed.description("Welcome to my first football match event. " +
+                       "This football match is very important. " +
+                       "Our team is about to go up against our main league competitor.")
+
+      feed.tags do |tags|
+        tags.tag "Sport"
+        tags.tag "Team Sport"
+        tags.tag "Stadium"
+      end
+
+      ...
+
+    end
+  end
+end
+
+```
+
+More information on building a feed in Ruby can be found in the README
+of the 'ess' gem: https://github.com/essfeed/ruby-ess .
+
+More information on ESS and what tags and options are available can
+be found on http://essfeed.org/ .
+
+## Contributing
 
 Contributions to the project are welcome. Feel free to fork and improve. I accept pull requests and issues,
 especially when tests are included.
