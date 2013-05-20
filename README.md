@@ -5,7 +5,7 @@ rails-ess
 
 [![ESS Feed Standard](http://essfeed.org/images/8/87/ESS_logo_32x32.png)](http://essfeed.org/)
 
-Generate ESS XML feed with Ruby-on-Rails
+Generate ESS XML feeds with Ruby-on-Rails
 
 ## Installation
 
@@ -23,11 +23,12 @@ Or install it yourself as:
 
 ## Usage
 
-This little extends Rails so that it becomes easy to create ESS feeds
+This little gem extends Rails so that it becomes easy to create ESS feeds
 in your web application.
 
-It adds the "application/ess+xml" MIME type, which allows you to add
-links in the head part of a webpage like this:
+It adds the 'application/ess+xml' MIME type, which means that to add
+an auto discovery link tag for an ESS feed, it's enough to add the
+following to the head section of a web page:
 
 ```ruby
 
@@ -35,7 +36,7 @@ links in the head part of a webpage like this:
 
 ```
 
-And also in a controller to respond with an ESS document:
+And also, in a controller to respond with an ESS document:
 
 ```ruby
 
@@ -55,7 +56,7 @@ templates:
 
 ```ruby
 
-ess_feed(:push => true, :validate =>) false do |ess|
+ess_feed(:push => true, :validate => false) do |ess|
   ess.channel do |channel|
     channel.title "National Stadium Football events"
     channel.link "http://sample.com/feeds/sample.ess"
@@ -104,7 +105,7 @@ especially when tests are included.
 
 (The MIT License)
 
-Copyright (c) 2013
+Copyright (c) 2013 Hypecal
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
