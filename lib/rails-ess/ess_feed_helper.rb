@@ -7,8 +7,8 @@ module ActionView
       def ess_feed(options = {}, &block)
         xml = eval("xml", block.binding)
         maker_options = options.clone
-        maker_options[:push] = false
-        maker_options[:aggregators] = nil
+        maker_options.delete(:push)
+        maker_options.delete(:aggregators)
         ess = ESS::Maker.make(maker_options, &block)
         output = ess.to_xml!
         if options[:aggregators] || options[:push]
