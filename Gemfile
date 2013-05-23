@@ -5,6 +5,7 @@ gemspec
 
 group :test do
   gem 'rails'
+  gem 'action_dispatch'
   gem 'ess', '0.9.1'
   gem 'rake'
   gem 'rspec', '~> 2.13.0'

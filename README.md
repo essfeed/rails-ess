@@ -1,7 +1,7 @@
 rails-ess [![ESS Feed Standard](http://essfeed.org/images/8/87/ESS_logo_32x32.png)](http://essfeed.org/)
 ========================================================================================================
 
-#### https://github.com/essfeed/rails-ess
+[![Build Status](https://travis-ci.org/essfeed/rails-ess.png)](https://travis-ci.org/essfeed/rails-ess)
 
 Generate ESS XML feeds with Ruby-on-Rails
 
