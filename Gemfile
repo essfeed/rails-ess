@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gemspec
 
 group :test do
+  gem 'actionpack', '~> 3.2.0'
   gem 'rake'
   gem 'rspec', '~> 2.13.0'
 end
