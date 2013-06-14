@@ -3,13 +3,13 @@ rails-ess [![ESS Feed Standard](http://essfeed.org/images/8/87/ESS_logo_32x32.pn
 
 [![Build Status](https://travis-ci.org/essfeed/rails-ess.png)](https://travis-ci.org/essfeed/rails-ess)
 
-Generate ESS XML feeds with Ruby-on-Rails
+Generate and parse ESS XML feeds with Ruby on Rails
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'rails-ess', '~> 0.9.3'
+    gem 'rails-ess', '~> 1.0.0'
 
 And then execute:
 
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install rails-ess -v "0.9.3"
+    $ gem install rails-ess -v "1.0.0"
 
 ## Usage
 
@@ -82,8 +82,9 @@ end
 
 ```
 
-More information on building a feed in Ruby can be found in the README
-of the 'ess' gem: https://github.com/essfeed/ruby-ess .
+More information on building and parsing ESS feeds in Ruby can be
+found in the README of the 'ess' gem:
+https://github.com/essfeed/ruby-ess .
 
 More information on ESS and what tags and options are available can
 be found on http://essfeed.org/ .

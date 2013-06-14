@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = ESS::Rails::VERSION
   gem.authors       = ["Marjan Povolni","Brice Pissard"]
   gem.email         = ["marian.povolny@gmail.com"]
-  gem.description   = %q{This gem extends Rails with the support for ESS feed generation using Builder like sintax.}
+  gem.description   = %q{This gem extends Rails with the support for ESS feed generation using Builder like syntax.}
   gem.summary       = %q{Rails extensions for ESS XML Feeds}
   gem.homepage      = "https://github.com/essfeed/rails-ess"
 
@@ -17,5 +17,5 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_runtime_dependency "ess", "0.9.3"
+  gem.add_runtime_dependency "ess", "1.0.0"
 end
